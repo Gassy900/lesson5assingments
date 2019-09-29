@@ -16,7 +16,7 @@ public class lucky7 {
             tries++;
             int total = d1.getValue() + d2.getValue();
             System.out.print("Try: " + tries + "\t");
-            System.out.format("You rolled a %d and a %d for a total of %d\n", d1.getValue(), d2.getValue(), total);
+            System.out.format("You rolled d %d and a %d for a total of %d\n", d1.getValue(), d2.getValue(), total);
             if (total == 2) {
                 break;
             }
