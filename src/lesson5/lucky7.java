@@ -1,5 +1,6 @@
 package lesson5;
 
+import java.util.Scanner;
 
 public class lucky7 {
 
@@ -8,20 +9,31 @@ public class lucky7 {
         dice d2 = new dice();
         d1.roll();
         d2.roll();
+        Scanner s = new Scanner(System.in);
+        int money, rolls = 0, ogmoney, highrolls = 0;
 
-        int tries = 0;
+        System.out.print("How much money you have in $? ");
+        money = s.nextInt();
+        ogmoney = money;
         while (true) {
+            rolls++;
             d1.roll();
             d2.roll();
-            tries++;
+            money--;
             int total = d1.getValue() + d2.getValue();
-            System.out.print("Try: " + tries + "\t");
-            System.out.format("You rolled d %d and a %d for a total of %d\n", d1.getValue(), d2.getValue(), total);
-            if (total == 2) {
+            if (total == 7) {
+                money += 4;
+            }
+            if (money >= ogmoney) {
+                highrolls = rolls;
+                ogmoney = money;
+            }
+            if (money == 0) {
                 break;
             }
         }
-        System.out.println("It took " + tries + " tries to get snake-eyes");
+        System.out.println("You are broke after " + rolls + " rolls");
+        System.out.println("You should have quit after " + highrolls + " rolls when you had $" + ogmoney);
     }
 
 }
