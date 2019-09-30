@@ -11,7 +11,8 @@ public class StudentInterface {
         Scanner scan = new Scanner(System.in);
 
         String name;
-        int score;
+        int score, highscore, average;
+        String scorename, averagename;
 
         while (true) {
             System.out.print("Enter name for first student (min 1 letter): ");
@@ -27,6 +28,7 @@ public class StudentInterface {
                 break;
             } else {
                 System.out.println(errormsg);
+                scan.nextLine();
             }
         }
 
@@ -46,11 +48,30 @@ public class StudentInterface {
                 break;
             } else {
                 System.out.println(errormsg2);
+                scan.nextLine();
             }
         }
         System.out.println("\n-------------------------\n");
         System.out.println(stu1);
         System.out.println(stu2);
+
+        if (stu1.getHighScore() > stu2.getHighScore()) {
+            scorename = stu1.getName();
+            highscore = stu1.getHighScore();
+        } else {
+            scorename = stu2.getName();
+            highscore = stu2.getHighScore();
+        }
+        if (stu1.getAverage() > stu2.getAverage()) {
+            averagename = stu1.getName();
+            average = stu1.getAverage();
+        } else {
+            averagename = stu2.getName();
+            average = stu2.getAverage();
+        }
+        System.out.println("\n-----------------------\n");
+        System.out.println(scorename + " has the highest score with a score of " + highscore);
+        System.out.println(averagename + " has the highest average with a average of " + average);
     }
 
 }
