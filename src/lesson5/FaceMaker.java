@@ -17,7 +17,7 @@ public class FaceMaker extends javax.swing.JFrame {
 
     public FaceMaker() {
         initComponents();
-        f = new Face(facepanel1.getGraphics(),100,100);
+        f = new Face(facepanel1.getGraphics(), 100, 100);
     }
 
     /**
@@ -61,6 +61,11 @@ public class FaceMaker extends javax.swing.JFrame {
         });
 
         btnsize.setText("Resize Face");
+        btnsize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsizeActionPerformed(evt);
+            }
+        });
 
         btncolor.setText("Change Color");
 
@@ -116,12 +121,19 @@ public class FaceMaker extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnmoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoveActionPerformed
-        int newx = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter New X"));
-        int newy = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter New Y"));
+        int newx = Integer.parseInt(JOptionPane.showInputDialog(this, "Enter New X"));
+        int newy = Integer.parseInt(JOptionPane.showInputDialog(this, "Enter New Y"));
         f.erase();
         f.move(newx, newy);
         f.draw();
     }//GEN-LAST:event_btnmoveActionPerformed
+
+    private void btnsizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsizeActionPerformed
+        int newdiam = Integer.parseInt(JOptionPane.showInputDialog(this, "Enter new diameter"));
+        f.erase();
+        f.sizenew(newdiam);
+        f.draw();
+    }//GEN-LAST:event_btnsizeActionPerformed
 
     /**
      * @param args the command line arguments

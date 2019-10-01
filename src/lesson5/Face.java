@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public class Face {
 
     private int xPos, yPos, diameter;
-    private Color color,c;
+    private Color color, c;
     private Graphics g;
 
     public Face(Graphics g, int x, int y) {
@@ -29,22 +29,28 @@ public class Face {
         g.setColor(color);
         g.fillOval(xPos, yPos, diameter, diameter);
     }
-    
-    public void drawEyes(){
+
+    public void drawEyes() {
         c = Color.yellow;
         g.setColor(c);
-        g.fillOval(xPos + 15,yPos + 20,diameter / 4, diameter / 4);
-        g.fillOval(xPos+ 60,yPos + 20,diameter / 4, diameter / 4);
+        g.fillOval(xPos + (int)(diameter/2), yPos + 20, diameter / 4, diameter / 4);
+        g.fillOval(xPos - (int)(diameter/2), yPos + 20, diameter / 4, diameter / 4);
     }
-    public void drawMouth(){
+
+    public void drawMouth() {
     }
 
     public void move(int x, int y) {
-       xPos = x;
-       yPos = y;
+        xPos = x;
+        yPos = y;
     }
-    public void erase(){
-    g.setColor(Color.white);
-    g.fillRect(xPos-10, yPos-10, diameter + 20, diameter + 20);
+
+    public void erase() {
+        g.setColor(Color.white);
+        g.fillRect(xPos - 10, yPos - 10, diameter + 20, diameter + 20);
+    }
+
+    public void sizenew(int x) {
+        diameter = x;
     }
 }
