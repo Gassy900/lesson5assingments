@@ -5,17 +5,19 @@
  */
 package lesson5;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mitc2200
  */
 public class FaceMaker extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FaceMaker
-     */
+    Face f;
+
     public FaceMaker() {
         initComponents();
+        f = new Face(facepanel1.getGraphics(),100,100);
     }
 
     /**
@@ -27,24 +29,49 @@ public class FaceMaker extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        facepanel1 = new javax.swing.JPanel();
+        btnmove = new javax.swing.JButton();
+        btnsize = new javax.swing.JButton();
+        btncolor = new javax.swing.JButton();
+        btnmood = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        facepanel1.setBackground(new java.awt.Color(255, 255, 255));
+        facepanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        facepanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout facepanel1Layout = new javax.swing.GroupLayout(facepanel1);
+        facepanel1.setLayout(facepanel1Layout);
+        facepanel1Layout.setHorizontalGroup(
+            facepanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 480, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        facepanel1Layout.setVerticalGroup(
+            facepanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 319, Short.MAX_VALUE)
         );
+
+        btnmove.setText("Move Face");
+        btnmove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmoveActionPerformed(evt);
+            }
+        });
+
+        btnsize.setText("Resize Face");
+
+        btncolor.setText("Change Color");
+
+        btnmood.setText("Toggle Mood");
+
+        jButton1.setText("Set Intitial Face");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,19 +79,49 @@ public class FaceMaker extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnmove)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnsize)
+                        .addGap(18, 18, 18)
+                        .addComponent(btncolor)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnmood))
+                    .addComponent(facepanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnmove)
+                    .addComponent(btnsize)
+                    .addComponent(btncolor)
+                    .addComponent(btnmood))
+                .addGap(5, 5, 5)
+                .addComponent(facepanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        f.draw();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnmoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoveActionPerformed
+        int newx = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter New X"));
+        int newy = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter New Y"));
+        f.erase();
+        f.move(newx, newy);
+        f.draw();
+    }//GEN-LAST:event_btnmoveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,6 +159,11 @@ public class FaceMaker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btncolor;
+    private javax.swing.JButton btnmood;
+    private javax.swing.JButton btnmove;
+    private javax.swing.JButton btnsize;
+    private javax.swing.JPanel facepanel1;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
