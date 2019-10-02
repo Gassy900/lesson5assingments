@@ -22,6 +22,7 @@ public class Face {
     public void draw() {
         drawHead();
         drawEyes();
+        drawMouth();
     }
 
     public void drawHead() {
@@ -33,11 +34,20 @@ public class Face {
     public void drawEyes() {
         c = Color.yellow;
         g.setColor(c);
-        g.fillOval(xPos + (int)(diameter/2), yPos + 20, diameter / 4, diameter / 4);
-        g.fillOval(xPos - (int)(diameter/2), yPos + 20, diameter / 4, diameter / 4);
+        g.fillOval(xPos + (int)(diameter/1.8), yPos + (int)(diameter/4.2), diameter / 4, diameter / 4);
+        g.fillOval(xPos + (int)(diameter/5), yPos +(int)(diameter/4.2), diameter / 4, diameter / 4);
     }
 
     public void drawMouth() {
+        g.setColor(Color.black);
+        g.drawLine( xPos +(int)(diameter/6), yPos+(int)(diameter/1.8), xPos+(int)(diameter/5), yPos+(int)(diameter/1.4));
+        g.drawLine( xPos+(int)(diameter/5), yPos+(int)(diameter/1.4), xPos+(int)(diameter/1.382),yPos+(int)(diameter/1.4));
+        g.drawLine(xPos+(int)(diameter/1.382),yPos+(int)(diameter/1.4), xPos+(int)(diameter/1.25), yPos+(int)(diameter/1.8));
+    }
+    public void sadMouth(){
+        g.drawLine( xPos +(int)(diameter/6), yPos+(int)(diameter/1.8), xPos+(int)(diameter/5), yPos+(int)(diameter/1.4));
+        g.drawLine( xPos+(int)(diameter/5), yPos+(int)(diameter/1.4), xPos+(int)(diameter/1.382),yPos+(int)(diameter/1.4));
+        g.drawLine(xPos+(int)(diameter/1.382),yPos+(int)(diameter/1.4), xPos+(int)(diameter/1.25), yPos+(int)(diameter/1.8));
     }
 
     public void move(int x, int y) {
@@ -52,5 +62,10 @@ public class Face {
 
     public void sizenew(int x) {
         diameter = x;
+    }
+    public void reset(){
+        diameter = 100;
+        xPos = 100;
+        yPos = 100;
     }
 }

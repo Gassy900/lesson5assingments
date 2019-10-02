@@ -70,6 +70,11 @@ public class FaceMaker extends javax.swing.JFrame {
         btncolor.setText("Change Color");
 
         btnmood.setText("Toggle Mood");
+        btnmood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmoodActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Set Intitial Face");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +122,8 @@ public class FaceMaker extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        f.erase();
+        f.reset();
         f.draw();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -134,6 +141,11 @@ public class FaceMaker extends javax.swing.JFrame {
         f.sizenew(newdiam);
         f.draw();
     }//GEN-LAST:event_btnsizeActionPerformed
+
+    private void btnmoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoodActionPerformed
+            f.erase();
+            
+    }//GEN-LAST:event_btnmoodActionPerformed
 
     /**
      * @param args the command line arguments
