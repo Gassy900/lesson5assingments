@@ -5,6 +5,8 @@
  */
 package lesson5;
 
+import java.awt.Color;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,6 +70,11 @@ public class FaceMaker extends javax.swing.JFrame {
         });
 
         btncolor.setText("Change Color");
+        btncolor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncolorActionPerformed(evt);
+            }
+        });
 
         btnmood.setText("Toggle Mood");
         btnmood.addActionListener(new java.awt.event.ActionListener() {
@@ -143,9 +150,22 @@ public class FaceMaker extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsizeActionPerformed
 
     private void btnmoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoodActionPerformed
+            if (f.var == false){
+                f.var=true;
+            } else {
+                f.var=false;
+            }
             f.erase();
+            f.draw();
             
     }//GEN-LAST:event_btnmoodActionPerformed
+
+    private void btncolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncolorActionPerformed
+         Color newc = JColorChooser.showDialog(this, "Pick new Dice Color", Color.white);
+         Color newdc = JColorChooser.showDialog(this, "Pick new Dot Color", Color.black);
+        f.setColor(newc, newdc);
+        f.draw();
+    }//GEN-LAST:event_btncolorActionPerformed
 
     /**
      * @param args the command line arguments
