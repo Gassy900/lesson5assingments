@@ -6,7 +6,6 @@ public class lucky7 {
 
     public static void main(String[] args) {
         dice d1 = new dice();
-        int com;
         dice d2 = new dice();
         d1.roll();
         d2.roll();
@@ -35,8 +34,6 @@ public class lucky7 {
         }
         System.out.println("You are broke after " + rolls + " rolls");
         System.out.println("You should have quit after " + highrolls + " rolls when you had $" + ogmoney);
-         com = (int) (Math.random() * 100 + 1);
-         System.out.println(""+com);
     }
 
 }
