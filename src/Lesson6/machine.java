@@ -2,8 +2,9 @@ package Lesson6;
 
 public class machine {
 
-    private int com, guesstry, guess;
+    private int guesstry, guess;
     private String hint;
+    public int com;
 
     public machine() {
         com = (int) (Math.random() * 100  + 1);

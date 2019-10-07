@@ -22,15 +22,34 @@ Hours- try -100 and +100
 
 Testing of Payroll InterFace
 
-Code Coverage --  Employee Type 1       Employee Type 1        
-                  Hourly Rate: 10       Hourly Rate: 10
-                  Hours Worked: 30      Hours Worked: 50
-                  Result: 300           Result: 600
+Complete Code Coverage: Ensuring that every line of your code gets run at least once
+Equivalence Class: Data that will send you down the same path of execution each time you run the program
+Boundary Conditions: Data that falls right on or near boundaries
+Extreme Conditions: Data that is far away from boundaries
 
 
-Boundary Conditions -- Emp Type 1
-                       Hourly Rate: 10
-                       Hours: 39,40,41
-                       Results:
+Testing Log
+Attempt         Data            Expected        Actual
+======          ====            ========        ======
+1               type =0        type not set    type not set
+2               type =1        type set        type set
+3               type =2        type set        type set
+4               type =3        type not set    type not set
+5               type =100      type not set    type not set
+6               type =-100     type not set    type not set
+7               rate =6.74     rate not set    type not set
+8               rate =6.75     rate set        rate set
+9               rate =30.50    rate set        rate set
+10              rate =30.51    rate not set    rate not set
+11              rate =100      rate not set    rate not set
+12              rate =-100     rate not set    rate not set
+13              hours =-1      hours not set   hours not set
+14              hours =0       hours not set   hours not set
+15              hours =1       hours set       hours set
+16              hours =59      hours set       hours set
+17              hours =60      hours set       hours set
+18              hours =61      hours not set   hours not set
+19              hours =100     hours not set   hours not set
+20              hours =-100    hours not set   hours not set
 
 

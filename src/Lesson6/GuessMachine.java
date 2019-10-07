@@ -49,10 +49,9 @@ public class GuessMachine extends javax.swing.JFrame {
 
         jLabel2.setText("Guesses So Far");
 
-        lblguess.setText("?");
-
         lblhint.setBackground(new java.awt.Color(255, 255, 255));
-        lblhint.setText("?");
+        lblhint.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblhint.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,6 +106,9 @@ public class GuessMachine extends javax.swing.JFrame {
             guesstry = m.getNumGuesses();
             lblguess.setText("" + guesstry);
             lblhint.setText("" + hint);
+        }
+        if(guess == m.com){
+            jButton1.setEnabled(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
