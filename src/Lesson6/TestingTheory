@@ -29,8 +29,8 @@ Extreme Conditions: Data that is far away from boundaries
 
 
 Testing Log
-Attempt         Data            Expected        Actual
-======          ====            ========        ======
+Attempt         Data            Expected        Actual   
+      
 1               type =0        type not set    type not set
 2               type =1        type set        type set
 3               type =2        type set        type set

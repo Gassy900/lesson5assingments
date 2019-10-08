@@ -5,7 +5,7 @@ public class studenttestser {
 
     public static void main(String[] args) {
         student s = new student();
-        student s2 = new student("Marta Sellaroli", 21, 45,1);
+        student s2 = new student("Mitchell", 21, 45,1);
         s.setName("Bob smith");
         System.out.println("Student name is " + s.getName());
         s.setScore(1, 76);
