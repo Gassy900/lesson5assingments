@@ -30,18 +30,18 @@ public class Face {
         color = newc;
         color2 = newc2;
     }
-    public void drawHead() {
+    private void drawHead() {
         g.setColor(color);
         g.fillOval(xPos, yPos, diameter, diameter);
     }
 
-    public void drawEyes() {
+    private void drawEyes() {
         g.setColor(color2);
         g.fillOval(xPos + (int)(diameter/1.8), yPos + (int)(diameter/4.2), diameter / 4, diameter / 4);
         g.fillOval(xPos + (int)(diameter/5), yPos +(int)(diameter/4.2), diameter / 4, diameter / 4);
     }
 
-    public void drawMouth() {
+    private void drawMouth() {
         g.setColor(Color.black);
         if (var == true){
         g.drawLine( xPos +(int)(diameter/6), yPos+(int)(diameter/1.8), xPos+(int)(diameter/5), yPos+(int)(diameter/1.4));
