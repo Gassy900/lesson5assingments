@@ -26,5 +26,22 @@ public class Patron {
             return false;
         }
     }
-    
+
+    public boolean returnBook(Book b) {
+        if (b == b1) {
+            b1 = null;
+            return true;
+        }
+        if (b == b2) {
+            b2 = null;
+            return true;
+        }
+        if (b == b3) {
+            b3 = null;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
