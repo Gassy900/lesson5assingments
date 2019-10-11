@@ -44,4 +44,20 @@ public class Patron {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public boolean hasBook(Book b) {
+        if (b == b1) {
+            return true;
+        } else if (b == b2) {
+            return true;
+        } else if (b == b3) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 }
