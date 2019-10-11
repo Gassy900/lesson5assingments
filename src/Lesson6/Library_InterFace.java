@@ -29,6 +29,17 @@ public class Library_InterFace {
         if(p.borrow(b4)) System.out.println(b4.getTitle()+ " Succesfully borrowed");
         else System.out.println(b4.getTitle()+" Could not be borrowed");
         
+        System.out.println("---------\n Atttemting to send first book back\n -----------------");
+        if(p.returnBook(b1)) System.out.println(b1.getTitle()+" succesfully returned");
+        else System.out.println(b1.getTitle()+" was not borrowed");
+        System.out.println("------------------\n here is a list of the books "+p.getName()+" currently owns\n-----------------");
+        if(p.hasBook(b1)) System.out.println(b1.getTitle());
+        if(p.hasBook(b2)) System.out.println(b2.getTitle());
+        if(p.hasBook(b3)) System.out.println(b3.getTitle());
+        if(p.hasBook(b4)) System.out.println(b4.getTitle());
+        if(p.hasBook(b5)) System.out.println(b5.getTitle());
+        
+        
         
         
     }
